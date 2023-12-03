@@ -1,0 +1,116 @@
+/* 
+.nav-bar{
+    position: relative;
+    height: 100%;
+    position: relative;
+}
+
+.nav .listed-unstyle{
+    position: fixed;
+    background-color: #3C4245;
+    width: 192px;
+    height: 100%;
+    margin: 0;
+    list-style: none;
+    top: 0;
+    left: -192px;
+    transition: all 0.5s ease-in-out;
+  padding: 11px 15px 0 0 ;
+z-index: 1002;
+}
+.listed-unstyle li{
+    padding: 3px 10px;
+}
+.listed-unstyle li a{
+    color: #fff;
+    text-decoration: none;
+}
+.listed-unstyle li a.active{
+    color: #50D890;
+}
+
+.ic{
+    width: 40px;
+    height: 40px;
+    background-color: #3C4245;
+    position: absolute;
+    cursor: pointer;
+    left: 192px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    color: #fff;
+    justify-content: center;
+}
+.ic svg{    
+    font-size: 25px;
+    width: 100%;
+}
+.ic svg.active{
+    animation: spin 1.2s infinite linear;
+}
+.nav .listed-unstyle.right{
+    left: 0;
+}
+@keyframes spin {
+  to{
+    transform: rotate(360deg);
+  }
+} */
+
+.list-style{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--background-color-nav);
+    position: relative;
+}
+.item , .list, .item-list{
+display: flex;
+justify-content: center;
+padding: 10px;
+list-style: none;
+}
+.list-style li{
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.list svg{
+    font-size: 25px;
+}
+.list-style a{
+    text-decoration: none;
+    color: var(--color-local);
+}
+.item-list a.active{
+    color : var(--color-active)
+}
+.list-style svg{
+    display: none;
+}
+@media (min-width : 125px) and (max-width : 1200px){
+ /* .list-style{
+ flex-direction: column; 
+ align-items: flex-start;
+} */
+.list-style svg{
+    display: block;
+    font-size: 25px;
+}
+ .item-list{
+flex-direction: column;
+    background-color: #dff6ff;
+    width: 100%;
+    position: absolute;
+    /* top: 70px; */
+    top: -250px;
+    left: 0;
+    transition: all 0.5s ease-in-out;
+    z-index: 1002;
+}
+.item-list.active{
+    top:70px
+}
+
+}

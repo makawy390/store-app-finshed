@@ -1,0 +1,22 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,400&family=Scheherazade+New:wght@600;700&display=swap'); */
+
+footer{
+    color: #fff;
+    background: var(--background-color-nav);
+    /* font-family: 'Lato', sans-serif; */
+    color:var(--color-local) ;
+    padding: 10px  0;
+    text-align: center;
+}
+
+
+@media (min-width : 225px) and (max-width : 992px){
+    footer h2{
+        font-size : 14px !important;
+    }
+}
+@media (min-width: 100px) and (max-width :280px ){
+  footer h2{
+        font-size : 10px !important;
+    }
+}

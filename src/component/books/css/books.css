@@ -1,0 +1,120 @@
+
+*, *:before, *:after {
+	box-sizing:border-box;
+}
+
+.books , .edit , .add-new , .view {
+min-height: 93.5vh;
+}
+
+.justify-content-center{
+	margin: 250px auto;
+}
+.view{
+	padding: 80px 0;
+}
+.view a{
+text-decoration: none;
+}
+.view button{
+	margin-top: 10px;
+	padding: 5px 20px;
+	border-radius: 4px;
+}
+.edit button , .add-new button{
+	margin-top: 15px !important;
+}
+
+.books button{
+	padding: 3px 15px !important;
+    border-radius: 4px;
+}
+
+.pagination{
+	padding: 50px 0 0 0 ;
+	width: 100%;
+	display: grid;
+	align-items: flex-end;
+justify-content: center;
+}
+
+img{
+	width: 100% !important;
+	height: 250px;
+}
+.card-view{
+    padding: 20px;
+}
+.file-product{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+
+}
+.file-product img{
+   max-width: 100px;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+   margin: 20px 0 0 0;
+}
+.file-product button{
+	margin-bottom: 5px;
+}
+.books h2{
+	font-weight: 800;
+	font-size: 35px;
+letter-spacing: 5px;
+word-spacing: 5px;
+}
+.files-product{
+	width: 100%;
+	       display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        align-content : center;
+        justify-content: center;
+}
+
+.file-product-update{
+	display: flex;
+	align-items: center;
+ align-content : center;
+ justify-content: center;
+
+}
+.files-product img , .file-product-update img {
+   max-width: 100px;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+   margin: 20px 0 0 0; 
+}
+.files-product .image-uploads , .file-product-update .image-uploads {
+				border-radius: 5px;
+}
+.file-product-update svg{
+	margin-top: 80px;
+	margin-left: 20px;
+	font-size: 25px;
+	cursor: pointer;
+	color: #6366f1;
+}
+.flex-state{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.books .flex-state svg{
+    margin-top: 3px;
+    font-size: 35px;
+    cursor: pointer;
+    background-color: #64748B;
+				color: #fff;
+    padding: 7px 7px;
+    border-radius: 50%;
+}

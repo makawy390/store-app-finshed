@@ -1,0 +1,54 @@
+
+.login , .register , .update{
+    padding: 100px 0;
+    min-height: 100vh;
+}
+.login a , .register a{
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    display: inline;
+    
+}
+
+.login p , .register p{
+    display: inline;
+}
+.login button , .register button{
+    direction: ltr;
+    margin-top: 20px;
+}
+
+.login .link{
+    word-spacing: 2px;
+}
+
+.edit-user{
+    padding: 60px 0;
+    min-height: 93.5vh;
+}
+.login button , .register button{
+margin: 10px 0 !important;
+width: 100%;
+}
+
+    .register .files-register{
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        align-content : center;
+        justify-content: center;
+    }
+.register .files-register img {
+   max-width: 100px;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+   margin: 20px 0 0 0; 
+}
+.files-register .image-uploads{
+    border-radius: 50%;
+}
+
