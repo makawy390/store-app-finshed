@@ -5,15 +5,15 @@
 canvas{
  height: 300px !important;
 }
-.card-dash.one{
+/* .card-dash.one{
  background-color: #3b82f6;
  color: #fff;
-}
+} */
 
-.card-dash.two{
+/* .card-dash.two{
  background-color: #22c55e;
  color: #fff;
-}
+} */
 .tabel{
  margin-top: 20px;
 }
@@ -23,9 +23,20 @@ canvas{
  border-radius: 50%;
  cursor: pointer;
 }
-.dash-board .box-card{
- background-color: #22c55e;
+.box-card .card-dash  {
  padding: 25px;
  border-radius: 5px;
  color: #fff;
+}
+.box-card .one{
+ background-color: #02B2AF;
+}
+.box-card .two{
+background-color: #2e96ff;
+}
+.box-card .three{
+background-color: rgb(184, 0, 216) ;
+}
+.css-66gjpw-MuiResponsiveChart-container{
+ margin: auto;
 }

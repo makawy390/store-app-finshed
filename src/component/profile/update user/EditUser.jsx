@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 
 const EditUser = () => {
   const initialState = {
-    first_name : undefined,
+     first_name : undefined,
     last_name : undefined,
     gender : undefined,
     country:undefined,
@@ -61,13 +61,6 @@ Toast.fire({
   title: response.data.data_en
 });
 
-setFormData({
-      first_name : "",
-    last_name : "",
-    gender : "",
-    country: "",
-    description: ""
-})
  }).catch((error) =>{
             console.log(error.response);
   Swal.fire({
@@ -95,17 +88,17 @@ setFormData({
 <Grid container spacing={2}  sx={{marginTop :.5}}>
   <Grid item md={6} xs={12}>
     <TextField fullWidth  label="first name" type='text'  name="first_name"   
-    onChange={handelChange} value={formData.first_name} />
+    onChange={handelChange}  />
   </Grid>
   <Grid item md={6} xs={12}>
         <TextField fullWidth  label="last name" type='text'  name="last_name"  sx={{marginBottom : '10px'}} 
-    onChange={handelChange} value={formData.last_name} />
+    onChange={handelChange}  />
   </Grid>
 </Grid>
             <TextField fullWidth  label="address" type='text'  name="country"   
-    onChange={handelChange} value={formData.country} sx={{margin : '10px 0'}} />
-            <TextField fullWidth  label="description" type='text'  name="description"   
-    onChange={handelChange} value={formData.description} sx={{margin : '10px 0'}} />
+    onChange={handelChange}  sx={{margin : '10px 0'}} />
+            <TextField fullWidth  label="Bio" type='text'  name="description"   
+    onChange={handelChange}  sx={{margin : '10px 0'}} />
                 <RadioGroup row sx={{margin : '10px 0'}}
                 aria-labelledby="demo-row-radio-buttons-group-label" name="row-radio-buttons-group">
         <FormControlLabel value="male" name='gender' control={<Radio />} label="Male" onChange={handelChange} />

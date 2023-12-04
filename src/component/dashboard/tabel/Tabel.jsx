@@ -46,7 +46,7 @@ export default function CustomizedTables(data) {
   return (
 <div className="tabel">
       <TableContainer>
-      <Table sx={{ maxWidth: 1100 }} aria-label="customized table">
+      <Table sx={{ width : "100%"}} aria-label="customized table">
         <TableHead>
           <TableRow>
             <StyledTableCell>full name</StyledTableCell>

@@ -37,9 +37,9 @@ arr.filter(ele => ele === "user"? arrUser.push(ele): ele === "manager"?
 
 
     return (
-        <div className="dash-board" dir='ltr'>
+        <div className="dash-board">
             <>
-              <PieChart
+              <PieChart 
       series={[
         {
           data: [
@@ -54,26 +54,26 @@ arr.filter(ele => ele === "user"? arrUser.push(ele): ele === "manager"?
       height={200}
     />
             </>
-                <Grid container spacing={2} sx={{margin: "40px 0",padding : "50px 0"}}>
-      <Grid item md={4}>
+                <Grid container spacing={2} sx={{margin: "20px 0"}}>
+      <Grid item md={4} xs={12}>
         <div className="box-card">
-          <div className="card-dash">
+          <div className="card-dash one">
         <h5>count of user</h5>
         <span>{arrUser.length}</span>
           </div>
         </div>
 
       </Grid>
-            <Grid item md={4}>
-                      <div className="box-card">
-          <div className="card-dash">
+            <Grid item md={4} xs={12}>
+                      <div className="box-card ">
+          <div className="card-dash two">
         <h5>count of admin</h5>
         <span>{arrAdmin.length}</span>
         </div></div>
       </Grid>
-            <Grid item md={4}>
+            <Grid item md={4} xs={12}>
             <div className="box-card">
-          <div className="card-dash">
+          <div className="card-dash three">
         <h5>count of manager</h5>
         <span>{arrManager.length}</span>
         </div></div>
