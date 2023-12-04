@@ -1,5 +1,5 @@
 import {useRef, useState} from 'react'
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import  axios  from 'axios';
 import url_books from '../../api/api.book';
 import  Swal  from 'sweetalert2';
@@ -7,7 +7,8 @@ import { Button } from 'primereact/button';
 import { RiUploadCloud2Line } from "react-icons/ri";
 const UpdateImageProfile = () => {
   const [image , setImage]=useState();
- const token = useSelector(state => state.data.token);
+//  const token = useSelector(state => state.data.token);
+ const token = sessionStorage.getItem("token");
   let config = {
     headers: {
       'Authorization': 'Bearer ' + token,
@@ -27,7 +28,9 @@ const load = () => {
       }, 2000);
   };
   const inputRef = useRef();
- const id = useSelector(state => state.data.id);
+//  const id = useSelector(state => state.data.id);
+ const id = sessionStorage.getItem("id")
+
   const updateProfile = (e)=>{
 e.preventDefault();
 load();

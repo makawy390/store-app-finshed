@@ -36,6 +36,7 @@ const dataSlice = createSlice({
         },
         checkFunc : (state)=>{
             state.check = !state.check;
+            
         },
         newUsername : (state , action) =>{
          state.username = action.payload;

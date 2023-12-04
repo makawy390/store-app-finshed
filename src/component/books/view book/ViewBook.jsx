@@ -19,7 +19,6 @@ const ViewBook = () => {
     },[id]);
     console.log(singleBook);
     const [loading, setLoading] = useState(false);
-
     const save = () => {
         setLoading(true);
         setTimeout(() => {

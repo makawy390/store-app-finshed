@@ -4,7 +4,7 @@ import url from '../../api/api.book';
 import '../css/books.css';
 import useFetch from '../fetchData/fetch data/fetchData';
 import { ProgressSpinner } from 'primereact/progressspinner';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import { Button } from 'primereact/button';
 import { useState } from 'react';
 import {Image} from 'primereact/image'
@@ -15,13 +15,16 @@ import { HiOutlineShoppingCart } from 'react-icons/hi2';
 // import { addCart } from '../../../redux/reducer/createSliceProducts';
 
 const Books = () => {
-  const role = useSelector(state => state.data.login);
+  // const role = useSelector(state => state.data.login);
+  const role = sessionStorage.getItem("role")
   const navigate = useNavigate();
   const [pageNum, setPage] = useState(1);
   const handleChange = (event, value) => {
     setPage(value);
   };
-  const token = useSelector(state => state.data.token);
+  // const token = useSelector(state => state.data.token);
+ const token = sessionStorage.getItem("token");
+
 const deleteProduct = (product)=>{
  Swal.fire({
   title: "Are you sure?",
@@ -47,6 +50,9 @@ const deleteProduct = (product)=>{
   }
 });
 }
+// const addCart = (product)=>{
+// sessionStorage.setItem("products" , [...product])
+// }
   useTitle('All Products');
 //  const dispath =  useDispatch();
   const booksData = useFetch(`${url}/api/books` , pageNum , 10);

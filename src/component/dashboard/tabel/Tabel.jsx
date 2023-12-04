@@ -1,9 +1,8 @@
 import * as React from 'react';
 import  { tableCellClasses , Table , styled,  TableBody  
   , TableRow  , TableCell,TableContainer , TableHead} from '@mui/material';
-// import { MdDelete } from "react-icons/md";
 import axios  from 'axios';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import api from '../../api/api.book';
 import {Image} from 'primereact/image';
 
@@ -31,7 +30,8 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 export default function CustomizedTables(data) {
     const [user , setUser] = React.useState([]);
 
-     const token = useSelector(state => state.data.token);
+    //  const token = useSelector(state => state.data.token);
+     const token = sessionStorage.getItem("token")
      let config = {
     headers: {
       'Authorization': 'Bearer ' + token
@@ -41,8 +41,7 @@ export default function CustomizedTables(data) {
      axios.get(`${api}/api/user` , config)
      .then(res => setUser(res.data.data.allUsers))
      .catch(err => console.log(err))
-    },);
-    console.log(user);   
+    });
 
   return (
 <div className="tabel">

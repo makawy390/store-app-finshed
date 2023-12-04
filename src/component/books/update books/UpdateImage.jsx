@@ -1,5 +1,5 @@
 import {useRef, useState} from 'react'
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import url_books from '../../api/api.book';
@@ -20,7 +20,8 @@ const UpdateImage = () => {
     setOpen(true);
   };
 
-      const token = useSelector(state => state.data.token)
+      // const token = useSelector(state => state.data.token)
+      const token = sessionStorage.getItem("token");
  let config = {
     headers: {
       'Authorization': 'Bearer ' + token,

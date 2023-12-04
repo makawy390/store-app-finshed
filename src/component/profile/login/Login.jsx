@@ -37,11 +37,17 @@ const Login = () => {
         dispatch(addData(res.data.data.role));
         dispatch(addToken(res.data.token));
         dispatch(addID(res.data.data.id));
-        console.log(res.data);
         dispatch(addProfile(res.data.data.profile));
         dispatch(newUsername(`${res.data.data.first_name} ${res.data.data.last_name}`))
         navigate('/all-products');
-        dispatch(checkFunc());;
+        dispatch(checkFunc());
+        sessionStorage.setItem("check" , true);
+        sessionStorage.setItem("id" , res.data.data.id);
+        sessionStorage.setItem("token" , res.data.token);
+        sessionStorage.setItem("role" , res.data.data.role);
+        sessionStorage.setItem("profile", res.data.data.profile);
+        sessionStorage.setItem("full name" , `${res.data.data.first_name} ${res.data.data.last_name}`);
+        sessionStorage.setItem("email" , formData.email);
   const Toast = Swal.mixin({
   toast: true,
   position: "top-end",
@@ -71,7 +77,6 @@ Swal.fire({
       setFormData({...formData , [e.target.name] : e.target.value})
     }
   useTitle('Sign in');
-
     const [open, setOpen] = useState(false);
   const handleClose = () => {
     setOpen(false);

@@ -5,18 +5,14 @@ import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { Button } from 'primereact/button';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import UpdateImage from './UpdateImage';
 import useTitle from '../../../changeDocTitle/docTitle';
 const EditeBook = () => {
-    // const [singleBook , setSingleBook] = useState([]);
     const param = useParams();   
     const [name , setName] = useState();
     const [desc , setDesc] = useState();
-    // const [link , setLink] = useState();
     const [price , setprice] = useState();
-
-
     const [loading, setLoading] = useState(false);
   const load = () => {
       setLoading(true);
@@ -24,22 +20,21 @@ const EditeBook = () => {
           setLoading(false);
       }, 2000);
   };
-  const token = useSelector(state => state.data.token)
-
+  // const token = useSelector(state => state.data.token)
+  const token = sessionStorage.getItem("token");
  let config = {
     headers: {
       'Authorization': 'Bearer ' + token,
       'Content-Type': 'multipart/form-data',
     }
   }
-const   navigate = useNavigate();
+const  navigate = useNavigate();
 const handlerEdit = (e)=>{
     e.preventDefault();
     load();
     axios.patch(`${url_books}/api/books/update/${param.id}` , {
         title : name,
         description: desc,
-        link : "link",
         price : price,
     },config).then((res) => {
         Swal.fire({
@@ -49,8 +44,8 @@ const handlerEdit = (e)=>{
             showConfirmButton: false,
             timer: 1500
           })
-          console.log(res.data);
-          navigate('/allBooks');
+          // console.log(res.data);
+          navigate('/all-products');
     })
     .catch(err => console.error(err))
 }

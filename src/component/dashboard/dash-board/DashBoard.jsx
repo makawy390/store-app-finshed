@@ -2,14 +2,15 @@ import  { useState, useEffect } from 'react';
 import { PieChart } from '@mui/x-charts/PieChart';
 import '../css/dash-board.css'
 import axios from 'axios';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import CustomizedTables from '../tabel/Tabel';
 import api from '../../api/api.book'
 import { Grid } from '@mui/material';
 import useTitle from '../../../changeDocTitle/docTitle';
 export default function DashBoard() {
     const [users , setUsers] = useState([]);
-     const token = useSelector(state => state.data.token);
+    //  const token = useSelector(state => state.data.token);
+     const token = sessionStorage.getItem("token");
 //   let config = 
 
     const arr = [];

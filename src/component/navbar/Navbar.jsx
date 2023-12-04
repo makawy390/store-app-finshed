@@ -1,6 +1,6 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import './nav.css';
-import {useSelector , useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { checkFunc } from '../../redux/reducer/createSlice';
 import { HiOutlineShoppingCart } from "react-icons/hi2";
 import { PiHeartDuotone } from "react-icons/pi";
@@ -12,17 +12,20 @@ import SmallNav from './SmallNav';
 
 const Navbar = () => {
   const check = useSelector(state => state.data.check);
-  const id = useSelector(state => state.data.id);
-  const profile = useSelector(state => state.data.profile);
-console.log(profile);
+  // sessionStorage.setItem("check" , check);
+
+  // const id = useSelector(state => state.data.id);
+  // const profile = useSelector(state => state.data.profile);
+
+  // const check = sessionStorage.getItem("check")
+ const id = sessionStorage.getItem("id");
+ const profile = sessionStorage.getItem("profile");
 const dispatch = useDispatch();
 const navi = useNavigate();
-// console.log(role);
   const [nav , setNav] = useState(false);
-
   const handelNavigationBar = ()=>{
     if (nav === true) {
-      setNav('')
+      setNav('')  
     }
     else{
       setNav(true)
@@ -39,7 +42,9 @@ const navi = useNavigate();
 const handelLogout = ()=>{
   setAnchorEl(null);
   dispatch(checkFunc())
-  navi('/')
+  navi('/');
+  sessionStorage.removeItem("role")
+  sessionStorage.removeItem("check")
 }
 const handelProfile = ()=>{
   setAnchorEl(null);
