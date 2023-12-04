@@ -17,6 +17,7 @@ const useFetch = (url , page , limit)=>{
         axios.get(`${url}?limit=${limit}&page=${page}` ,{ 
         headers: {
       'Authorization': `Bearer ${token}`
+      
     }
   }).then((res)=> {
             setData(res.data.data)

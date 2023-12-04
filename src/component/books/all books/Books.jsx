@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom';
 import url from '../../api/api.book';
 import '../css/books.css';
 import useFetch from '../fetchData/fetch data/fetchData';
-import { ProgressSpinner } from 'primereact/progressspinner';
+// import { ProgressSpinner } from 'primereact/progressspinner';
 // import { useSelector } from 'react-redux';
 import { Button } from 'primereact/button';
 import { useState } from 'react';
@@ -13,6 +13,7 @@ import  Swal  from 'sweetalert2';
 import useTitle from '../../../changeDocTitle/docTitle';
 import { HiOutlineShoppingCart } from 'react-icons/hi2';
 // import { addCart } from '../../../redux/reducer/createSliceProducts';
+import Spinner from './../../layout/Spinner';
 
 const Books = () => {
   // const role = useSelector(state => state.data.login);
@@ -94,9 +95,7 @@ const deleteProduct = (product)=>{
     <Box>
 <Grid container spacing={2}  >
   {booksData === undefined? 
-    <div className=" flex justify-content-center">
-            <ProgressSpinner />
-        </div> :   <>
+    <Spinner /> :   <>
         {filtrationBooks}
         </>
 }

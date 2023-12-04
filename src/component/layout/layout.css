@@ -1,0 +1,12 @@
+.layout{
+ width: 100% ;
+ height: 100% !important;
+ margin:  250px auto;
+
+}
+.layout .spinner{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ align-content: center;
+}
