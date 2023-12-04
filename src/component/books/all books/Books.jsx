@@ -4,7 +4,7 @@ import url from '../../api/api.book';
 import '../css/books.css';
 import useFetch from '../fetchData/fetch data/fetchData';
 // import { ProgressSpinner } from 'primereact/progressspinner';
-// import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Button } from 'primereact/button';
 import { useState } from 'react';
 import {Image} from 'primereact/image'
@@ -14,6 +14,7 @@ import useTitle from '../../../changeDocTitle/docTitle';
 import { HiOutlineShoppingCart } from 'react-icons/hi2';
 // import { addCart } from '../../../redux/reducer/createSliceProducts';
 import Spinner from './../../layout/Spinner';
+import { addCart } from '../../../redux/reducer/createSliceProducts';
 
 const Books = () => {
   // const role = useSelector(state => state.data.login);
@@ -23,6 +24,7 @@ const Books = () => {
   const handleChange = (event, value) => {
     setPage(value);
   };
+  const dispatch = useDispatch();
   // const token = useSelector(state => state.data.token);
  const token = sessionStorage.getItem("token");
 
@@ -71,8 +73,7 @@ const deleteProduct = (product)=>{
           {product.price} $
         </Typography> 
         {/* <HiOutlineShoppingCart onClick={dispath(addCart(product))}  /> */}
-        <HiOutlineShoppingCart  />
-
+        <HiOutlineShoppingCart  onClick={()=> dispatch(addCart(product))} />
        </div>
       </CardContent>
       <CardActions>

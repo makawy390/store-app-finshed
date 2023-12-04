@@ -8,16 +8,10 @@ const cartSlice = createSlice({
     initialState,
     reducers : {
         addCart : (state , action)=>{
-         const {title} = action.payload;
-         const item = state.cart.findIndex(cart => cart.title === title);
-          if (item >=0) {
-            state.cart[item].count +=1
-        }   
-        else {
-            const finalCart = action.payload
-            state.cart.push(finalCart)
-            state.count +=1;
-        }
+         const id = action.payload.id;
+         state.count =+1;
+         const cartItem = state.cart.find(cart => cart._id === id);
+         cartItem ? (cartItem.count  =+1) : state.cart.push({...action.payload , count : 1})
         },
         deleteCart : (state , action)=>{
             state.cart = state.cart.filter((item) => item.id !== action.payload)
